@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+    BMNOMINAUI:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: business-manager-nomina-ui
+        expose:
+            - 9002
+        ports:
+            - 9002:9002
+        labels:
+            NAME: "business-manager-nomina-ui"
+        tty: true
+networks:
+    default:
+        external:
+            name: BM_NETWORK
